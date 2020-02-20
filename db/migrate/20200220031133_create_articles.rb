@@ -2,8 +2,8 @@ class CreateArticles < ActiveRecord::Migration[5.1]
   def change
     create_table :articles do |t|
       t.string :title
-      t.string :content
-      t.integer :category_id
+      t.text :content
+      t.references :category, foreign_key: true
       t.boolean :active
 
       t.timestamps
